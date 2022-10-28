@@ -1,0 +1,12 @@
+FROM ndn-base:v1
+
+ENV prefix "/prefix"
+
+RUN  apt-get install -y iproute2 iputils-ping pkg-config nano  sudo psmisc 
+
+WORKDIR /src
+
+COPY protocol/producer ./
+
+
+#CMD ["sh", "-c", "./build/producer_simple ${prefix}"]
